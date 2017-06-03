@@ -1,8 +1,8 @@
 import { h } from 'preact';
 import { Link } from 'preact-router/match';
 import styled from 'styled-components';
-import colors from '../../lib/styles/colors';
-import Container from '../shared/container';
+import colors from '../style/colors';
+import Container from './container';
 
 const Header = styled.header`
   background: ${colors.theme};
