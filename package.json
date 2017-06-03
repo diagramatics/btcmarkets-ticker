@@ -25,6 +25,7 @@
     "sass-loader": "^6.0.5"
   },
   "dependencies": {
+    "axios": "^0.16.1",
     "preact": "^8.1.0",
     "preact-compat": "^3.16.0",
     "preact-router": "^2.5.2",
