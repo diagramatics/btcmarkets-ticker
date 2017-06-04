@@ -1,9 +1,16 @@
 import { h, Component } from 'preact';
 import { Router } from 'preact-router';
+import styled from 'styled-components';
 
 import Header from './header';
 import Home from '../routes/home/index';
 // import Home from 'async!./home';
+
+const Wrapper = styled.div`
+  display: grid;
+  min-height: 100%;
+  grid-template-rows: [header] 48px [content] auto;
+`;
 
 export default class App extends Component {
   /** Gets fired when the route changes.
@@ -16,12 +23,12 @@ export default class App extends Component {
 
   render() {
     return (
-      <div id="app">
+      <Wrapper>
         <Header />
         <Router onChange={this.handleRoute}>
           <Home path="/" />
         </Router>
-      </div>
+      </Wrapper>
     );
   }
 }

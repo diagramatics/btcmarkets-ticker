@@ -12,7 +12,11 @@ const Header = styled.header`
 const Flex = styled.div`
   display: flex;
   align-items: center;
-  height: 48px;
+  height: 100%;
+`;
+
+const HeightContainer = styled(Container)`
+  height: 100%;
 `;
 
 const SiteTitle = styled.h1`
@@ -37,13 +41,13 @@ const StyledLink = styled(Link).attrs({
 
 export default () => (
   <Header>
-    <Container>
+    <HeightContainer>
       <Flex>
         <SiteTitle>BTCMarkets Ticker</SiteTitle>
         <Nav>
           <StyledLink href="/">Home</StyledLink>
         </Nav>
       </Flex>
-    </Container>
+    </HeightContainer>
   </Header>
 );
