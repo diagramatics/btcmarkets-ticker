@@ -31,7 +31,7 @@ export default class Home extends Component {
           lastPrice: formatPrice(response.data.lastPrice),
           bestBid: formatPrice(response.data.bestBid),
           bestAsk: formatPrice(response.data.bestAsk),
-          volume: response.data.volume,
+          volume: response.data.volume24h,
           timestamp: new Date(response.data.timestamp * 1000),
         });
       });
