@@ -4,7 +4,7 @@ let match = require('fs-router')(__dirname + '/routes');
 
 const cors = microCors({
   allowMethods: ['GET'],
-  origin: 'http://localhost:8080',
+  origin: 'http://localhost',
   maxAge: 10,
 });
 

@@ -1,8 +1,14 @@
 {
-  "devDependencies": {
+  "name": "btcmarkets-ticker",
+  "version": "0.1.0",
+  "description": "A PWA for BTCMarkets market data.",
+  "author": "Steven Sinatra <ohai@diagramatics.me>",
+  "license": "MIT",
+  "dependencies": {
     "lerna": "^2.0.0-rc.5"
   },
   "scripts": {
-    "start": "lerna run start --stream"
+    "start": "lerna run start --stream",
+    "deploy": "lerna exec --concurrency 1 --scope btcmarkets-ticker-frontend -- now --name btcmarkets-ticker -e NOW_SH=true --public"
   }
 }

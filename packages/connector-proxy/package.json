@@ -1,0 +1,17 @@
+{
+  "name": "connector-proxy",
+  "private": true,
+  "dependencies": {
+    "http-proxy": "^1.16.2",
+    "micro": "^7.3.3",
+    "yargs": "^8.0.1",
+    "if-env": "^1.0.0"
+  },
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
+    "dev": "node index.js --port 3000",
+    "serve": "node index.js --port 80"
+  }
+}

@@ -1,7 +1,7 @@
 {
-  "name": "btcmarkets-ticker",
-  "version": "1.0.0",
-  "description": "",
+  "name": "btcmarkets-ticker-frontend",
+  "version": "0.1.0",
+  "description": "Frontend for btcmarkets-ticker",
   "main": "index.js",
   "scripts": {
     "test": "eslint src && preact test",
@@ -12,7 +12,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.1",
