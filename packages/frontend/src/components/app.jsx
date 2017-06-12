@@ -1,7 +1,8 @@
 import { h, Component } from 'preact';
 import { Router } from 'preact-router';
+import { Provider } from 'react-redux';
 import styled from 'styled-components';
-
+import store from '../store';
 import Header from './header';
 import Home from '../routes/home/index';
 // import Home from 'async!./home';
@@ -23,12 +24,14 @@ export default class App extends Component {
 
   render() {
     return (
-      <Wrapper>
-        <Header />
-        <Router onChange={this.handleRoute}>
-          <Home path="/" />
-        </Router>
-      </Wrapper>
+      <Provider store={store}>
+        <Wrapper>
+          <Header />
+          <Router onChange={this.handleRoute}>
+            <Home path="/" />
+          </Router>
+        </Wrapper>
+      </Provider>
     );
   }
 }
