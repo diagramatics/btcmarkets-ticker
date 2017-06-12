@@ -6,7 +6,7 @@ import { relativeTime } from '../lib/timestamp';
 
 const Text = styled.div`
   color: ${colors.text.mid};
-  margin: 1rem 0;
+  margin: 1rem 0 0;
 `;
 
 

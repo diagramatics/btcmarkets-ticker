@@ -1,7 +1,7 @@
 export default function btcAudReducer(state = {
   marketData: {},
 }, action) {
-  if (action.type === 'UPDATE_MARKET_DATA' && action.marketName === 'btcAud') {
+  if (action.type === 'UPDATE_MARKET_DATA' && action.marketName === 'ethAud') {
     return {
       ...state,
       marketData: {

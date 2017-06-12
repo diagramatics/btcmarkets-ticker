@@ -4,46 +4,44 @@ import styled from 'styled-components';
 import Timestamp from './timestamp';
 
 const LastPrice = styled.div`
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: bold;
 `;
 
-const CenterText = styled.div`
-  text-align: center;
+const MarketName = styled.div`
+  font-size: 1.4rem;
+  font-weight: bold;
 `;
 
-const MarketData = ({ lastPrice, bestBid, bestAsk, volume, timestamp }) => (
-  <CenterText>
+const MarketData = ({ instrument, currency, lastPrice, bestBid, bestAsk, volume, timestamp }) => (
+  <div>
+    <MarketName>{instrument} — {currency}</MarketName>
     <LastPrice>
       {lastPrice}
     </LastPrice>
     <div>
-      {bestBid}
-    </div>
-    <div>
-      {bestAsk}
-    </div>
-    <div>
-      {volume}
+      <div>
+        <strong>B</strong> {bestBid}
+      </div>
+      <div>
+        <strong>A</strong> {bestAsk}
+      </div>
+      <div>
+        <strong>V</strong> {volume}
+      </div>
     </div>
     <Timestamp timestamp={timestamp} />
-  </CenterText>
+  </div>
 );
 
-MarketData.defaultProps = {
-  lastPrice: 0,
-  bestBid: 0,
-  bestAsk: 0,
-  timestamp: 0,
-  volume: 0,
-};
-
 MarketData.propTypes = {
-  lastPrice: PropTypes.number,
-  bestBid: PropTypes.number,
-  bestAsk: PropTypes.number,
-  timestamp: PropTypes.instanceOf(Date),
-  volume: PropTypes.number,
+  instrument: PropTypes.string.isRequired,
+  currency: PropTypes.string.isRequired,
+  lastPrice: PropTypes.number.isRequired,
+  bestBid: PropTypes.number.isRequired,
+  bestAsk: PropTypes.number.isRequired,
+  timestamp: PropTypes.instanceOf(Date).isRequired,
+  volume: PropTypes.number.isRequired,
 };
 
 export default MarketData;
