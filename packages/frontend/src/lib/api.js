@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export async function getMarketData() {
+export function getMarketData() {
   return axios.get(
     'https://cors.now.sh/https://api.btcmarkets.net/market/BTC/AUD/tick',
   );
