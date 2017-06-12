@@ -1,7 +1,7 @@
 import { h } from 'preact';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import colors from '../style/colors';
+import Timestamp from './timestamp';
 
 const LastPrice = styled.div`
   font-size: 4rem;
@@ -10,11 +10,6 @@ const LastPrice = styled.div`
 
 const CenterText = styled.div`
   text-align: center;
-`;
-
-const Timestamp = styled.div`
-  color: ${colors.text.mid};
-  margin: 1rem 0;
 `;
 
 const MarketData = ({ lastPrice, bestBid, bestAsk, volume, timestamp }) => (
@@ -31,9 +26,7 @@ const MarketData = ({ lastPrice, bestBid, bestAsk, volume, timestamp }) => (
     <div>
       {volume}
     </div>
-    <Timestamp>
-      {timestamp.toString()}
-    </Timestamp>
+    <Timestamp timestamp={timestamp} />
   </CenterText>
 );
 
