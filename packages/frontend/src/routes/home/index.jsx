@@ -8,8 +8,10 @@ import Container from '../../components/container';
 import CenterAlign from '../../components/center-align';
 import BtcAudData from '../../components/btc-aud-data';
 import EthAudData from '../../components/eth-aud-data';
+import LtcAudData from '../../components/ltc-aud-data';
 import btcAudActions from '../../actions/btc-aud-data';
 import ethAudActions from '../../actions/eth-aud-data';
+import ltcAudActions from '../../actions/ltc-aud-data';
 
 const DataItem = styled.div`
   background: ${colors.background.white};
@@ -42,6 +44,17 @@ export default class Home extends Component {
           timestamp: new Date(response.data.timestamp * 1000),
         }));
       });
+
+    getMarketData('ltc', 'aud')
+      .then((response) => {
+        store.dispatch(ltcAudActions.updateMarketData({
+          lastPrice: formatPrice(response.data.lastPrice),
+          bestBid: formatPrice(response.data.bestBid),
+          bestAsk: formatPrice(response.data.bestAsk),
+          volume: response.data.volume24h,
+          timestamp: new Date(response.data.timestamp * 1000),
+        }));
+      });
   }
 
   render() {
@@ -50,6 +63,7 @@ export default class Home extends Component {
         <Container>
           <DataItem><BtcAudData /></DataItem>
           <DataItem><EthAudData /></DataItem>
+          <DataItem><LtcAudData /></DataItem>
         </Container>
       </CenterAlign>
     );
