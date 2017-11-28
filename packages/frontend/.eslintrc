@@ -1,8 +1,36 @@
 {
-  "extends": ["eslint-config-synacor", "airbnb"],
+  "extends": [
+    "airbnb",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "parser": "babel-eslint",
+  "rules": {
+    "react/jsx-filename-extension": [
+      2,
+      {
+        "extensions": [
+          ".js"
+        ]
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "jsxBracketSameLine": true
+      }
+    ],
+    "react/no-unused-state": 0
+  },
   "settings": {
     "react": {
       "pragma": "h"
     }
+  },
+  "env": {
+    "browser": true
   }
 }

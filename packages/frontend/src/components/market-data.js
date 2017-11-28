@@ -13,12 +13,20 @@ const MarketName = styled.div`
   font-weight: bold;
 `;
 
-const MarketData = ({ instrument, currency, lastPrice, bestBid, bestAsk, volume, timestamp }) => (
+const MarketData = ({
+  instrument,
+  currency,
+  lastPrice,
+  bestBid,
+  bestAsk,
+  volume,
+  timestamp
+}) => (
   <div>
-    <MarketName>{instrument} — {currency}</MarketName>
-    <LastPrice>
-      {lastPrice}
-    </LastPrice>
+    <MarketName>
+      {instrument} — {currency}
+    </MarketName>
+    <LastPrice>{lastPrice}</LastPrice>
     <div>
       <div>
         <strong>B</strong> {bestBid}
@@ -41,7 +49,7 @@ MarketData.propTypes = {
   bestBid: PropTypes.number.isRequired,
   bestAsk: PropTypes.number.isRequired,
   timestamp: PropTypes.instanceOf(Date).isRequired,
-  volume: PropTypes.number.isRequired,
+  volume: PropTypes.number.isRequired
 };
 
 export default MarketData;

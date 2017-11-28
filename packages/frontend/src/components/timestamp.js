@@ -9,20 +9,19 @@ const Text = styled.div`
   margin: 1rem 0 0;
 `;
 
-
 export default class Timestamp extends Component {
   static propTypes = {
-    timestamp: PropTypes.number,
-  }
+    timestamp: PropTypes.number
+  };
 
   static defaultProps = {
-    timestamp: '',
-  }
+    timestamp: ''
+  };
 
   constructor(props) {
     super(props);
     this.state = {
-      relativeTime: '',
+      relativeTimeText: ''
     };
   }
 
@@ -45,15 +44,13 @@ export default class Timestamp extends Component {
 
   updateRelativity() {
     this.setState({
-      relativeTimeText: relativeTime(this.props.timestamp),
+      relativeTimeText: relativeTime(this.props.timestamp)
     });
   }
 
   timer = null;
 
   render(props, { relativeTimeText }) {
-    return (
-      <Text>Updated {relativeTimeText}</Text>
-    );
+    return <Text>Updated {relativeTimeText}</Text>;
   }
 }

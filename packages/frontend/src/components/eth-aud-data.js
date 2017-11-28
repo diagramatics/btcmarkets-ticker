@@ -8,7 +8,7 @@ const mapStateToProps = ({ ethAud }) => ({
   bestBid: ethAud.marketData.bestBid,
   bestAsk: ethAud.marketData.bestAsk,
   volume: ethAud.marketData.volume,
-  timestamp: ethAud.marketData.timestamp,
+  timestamp: ethAud.marketData.timestamp
 });
 
 export default connect(mapStateToProps)(MarketData);

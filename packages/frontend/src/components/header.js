@@ -29,13 +29,12 @@ const Nav = styled.nav`
 `;
 
 const StyledLink = styled(Link).attrs({
-  activeClassName: btoa(Math.random().toString()),
+  activeClassName: btoa(Math.random().toString())
 })`
   padding: 0 4px;
   text-decoration: none;
 
   &.${props => props.activeClassName} {
-
   }
 `;
 

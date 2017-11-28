@@ -1,7 +1,7 @@
 const updateMarketData = marketData => ({
   type: 'UPDATE_MARKET_DATA',
   marketName: 'ltcAud',
-  marketData,
+  marketData
 });
 
 export default { updateMarketData };

@@ -8,5 +8,5 @@ export default combineReducers({
   routing: routerReducer,
   btcAud: btcAudReducer,
   ethAud: ethAudReducer,
-  ltcAud: ltcAudReducer,
+  ltcAud: ltcAudReducer
 });

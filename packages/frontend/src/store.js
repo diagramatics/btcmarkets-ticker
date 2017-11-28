@@ -7,7 +7,7 @@ import reducers from './reducers/index';
 const store = createStore(
   reducers,
   devToolsEnhancer(),
-  compose(autoRehydrate()),
+  compose(autoRehydrate())
 );
 
 export default store;

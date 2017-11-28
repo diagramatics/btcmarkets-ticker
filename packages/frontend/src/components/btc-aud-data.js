@@ -8,7 +8,7 @@ const mapStateToProps = ({ btcAud }) => ({
   bestBid: btcAud.marketData.bestBid,
   bestAsk: btcAud.marketData.bestAsk,
   volume: btcAud.marketData.volume,
-  timestamp: btcAud.marketData.timestamp,
+  timestamp: btcAud.marketData.timestamp
 });
 
 export default connect(mapStateToProps)(MarketData);

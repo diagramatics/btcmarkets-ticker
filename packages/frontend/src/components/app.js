@@ -1,4 +1,4 @@
-import { h, Component } from 'preact';
+import { h } from 'preact';
 import { Router, Route } from 'react-router';
 import { createBrowserHistory } from 'history';
 import { syncHistoryWithStore } from 'react-router-redux';
@@ -16,17 +16,13 @@ const Wrapper = styled.div`
 
 const history = syncHistoryWithStore(createBrowserHistory(), store);
 
-export default class App extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <Wrapper>
-          <Header />
-          <Router history={history}>
-            <Route exact path="/" component={Home} />
-          </Router>
-        </Wrapper>
-      </Provider>
-    );
-  }
-}
+export default () => (
+  <Provider store={store}>
+    <Wrapper>
+      <Header />
+      <Router history={history}>
+        <Route exact path="/" component={Home} />
+      </Router>
+    </Wrapper>
+  </Provider>
+);
