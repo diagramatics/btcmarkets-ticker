@@ -6,12 +6,12 @@ import { Provider } from 'react-redux';
 import styled from 'styled-components';
 import store from '../store';
 import Header from './header';
-import Home from '../routes/home/index';
+import Home from '../routes/home';
 
 const Wrapper = styled.div`
   display: grid;
   min-height: 100%;
-  grid-template-rows: [header] 48px [content] auto;
+  grid-template-rows: [header] 56px [content] auto;
 `;
 
 const history = syncHistoryWithStore(createBrowserHistory(), store);

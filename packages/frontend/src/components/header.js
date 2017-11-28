@@ -20,12 +20,12 @@ const HeightContainer = styled(Container)`
 `;
 
 const SiteTitle = styled.h1`
-  flex: 1 1 0%;
+  flex: 1 1 auto;
   font-size: 1.5rem;
 `;
 
 const Nav = styled.nav`
-  flex: 0 1 0%;
+  flex: 0 0 auto;
 `;
 
 const StyledLink = styled(Link).attrs({
