@@ -28,14 +28,9 @@ const Nav = styled.nav`
   flex: 0 0 auto;
 `;
 
-const StyledLink = styled(Link).attrs({
-  activeClassName: btoa(Math.random().toString())
-})`
+const StyledLink = styled(Link)`
   padding: 0 4px;
   text-decoration: none;
-
-  &.${props => props.activeClassName} {
-  }
 `;
 
 export default () => (
