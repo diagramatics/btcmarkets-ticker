@@ -7,7 +7,7 @@
     "lint": "eslint src",
     "test": "npm run lint && preact test",
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
-    "build": "preact build --no-prerender",
+    "build": "preact build",
     "serve": "npm run build && preact serve",
     "dev": "preact watch",
     "deploy": "npm run build && now ./build --name btcmarkets-ticker -e NOW_SH=true --public"
@@ -31,7 +31,6 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
-    "history": "^4.7.2",
     "localforage": "^1.5.3",
     "moment": "^2.19.2",
     "preact": "^8.2.6",
@@ -39,8 +38,6 @@
     "preact-router": "^2.6.0",
     "prop-types": "^15.6.0",
     "react-redux": "^5.0.6",
-    "react-router": "^4.2.0",
-    "react-router-redux": "^4.0.8",
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",
     "redux-persist": "^5.4.0",

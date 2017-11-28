@@ -1,7 +1,5 @@
 import { h } from 'preact';
-import { Router, Route } from 'react-router';
-import { createBrowserHistory } from 'history';
-import { syncHistoryWithStore } from 'react-router-redux';
+import { Router } from 'preact-router';
 import { Provider } from 'react-redux';
 import styled from 'styled-components';
 import store from '../store';
@@ -14,14 +12,12 @@ const Wrapper = styled.div`
   grid-template-rows: [header] 56px [content] auto;
 `;
 
-const history = syncHistoryWithStore(createBrowserHistory(), store);
-
 export default () => (
   <Provider store={store}>
     <Wrapper>
       <Header />
-      <Router history={history}>
-        <Route exact path="/" component={Home} />
+      <Router>
+        <Home path="/" default />
       </Router>
     </Wrapper>
   </Provider>
