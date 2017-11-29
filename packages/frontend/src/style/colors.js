@@ -1,10 +1,10 @@
 export default {
-  theme: '#22b8cf',
+  theme: '#384d9d',
   background: {
-    white: '#fff'
+    white: '#f6f3eb'
   },
   text: {
-    light: '#fff',
-    mid: '#777'
+    light: '#f6f3eb',
+    mid: '#555'
   }
 };

@@ -10,7 +10,7 @@ injectGlobal`
     width: 100%;
     padding: 0;
     margin: 0;
-    background: #FAFAFA;
+    background: #f6f3eb;
     font-family: 'Source Sans Pro', 'Helvetica Neue', arial, sans-serif;
     font-weight: 400;
     color: #444;

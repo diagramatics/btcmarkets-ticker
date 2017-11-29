@@ -1,11 +1,11 @@
 {
   "name": "BTCMarkets Ticker",
-  "short_name": "BTCMarkets Ticker",
+  "short_name": "Coin Ticker",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#fafafa",
-  "theme_color": "#22b8cf",
+  "background_color": "#f6f3eb",
+  "theme_color": "#384d9d",
   "icons": [{
     "src": "/assets/icons/android-chrome-192x192.png",
     "type": "image/png",
