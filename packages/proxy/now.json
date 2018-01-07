@@ -1,0 +1,7 @@
+{
+  "name": "btcmarkets-ticker-api",
+  "alias": "api.crypto.dgr.li",
+  "env": {
+    "NODE_ENV": "production"
+  }
+}

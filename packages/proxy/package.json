@@ -1,0 +1,18 @@
+{
+  "name": "btcmarkets-ticker-proxy",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "micro",
+    "deploy": "now && now alias"
+  },
+  "author": "Steven Sinatra <steven@stevensinatra.id>",
+  "license": "MIT",
+  "dependencies": {
+    "fs-router": "^0.4.0",
+    "micro": "^9.0.2",
+    "micro-cors": "^0.0.4",
+    "node-fetch": "^1.7.3"
+  }
+}

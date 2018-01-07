@@ -9,6 +9,6 @@
   },
   "scripts": {
     "start": "lerna run start --scope btcmarkets-ticker-frontend --stream",
-    "deploy": "lerna exec --concurrency 1 --scope btcmarkets-ticker-frontend -- npm run deploy"
+    "deploy": "lerna exec --concurrency 1 -- npm run deploy"
   }
 }
