@@ -10,7 +10,7 @@
     "build": "preact build",
     "serve": "npm run build && preact serve",
     "dev": "preact watch",
-    "deploy": "npm run build && now ./build --name btcmarkets-ticker -e NOW_SH=true --public"
+    "deploy": "npm run build && now ./build --name btcmarkets-ticker -e NOW_SH=true --public && now alias -r rules.json"
   },
   "keywords": [],
   "author": "",

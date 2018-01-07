@@ -8,7 +8,7 @@
     "lerna": "^2.5.1"
   },
   "scripts": {
-    "start": "lerna run start --scope btcmarkets-ticker-frontend --stream",
-    "deploy": "lerna exec --concurrency 1 -- npm run deploy"
+    "start": "lerna run start --stream",
+    "deploy": "lerna exec --concurrency 1 -- npm run deploy && now alias crypto.dgr.li -r rules.json"
   }
 }

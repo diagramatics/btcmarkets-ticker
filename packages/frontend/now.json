@@ -1,0 +1,7 @@
+{
+  "name": "btcmarkets-ticker",
+  "alias": ["btcmarkets-ticker.dgr.li", "frontend.crypto.dgr.li"],
+  "env": {
+    "NODE_ENV": "production"
+  }
+}

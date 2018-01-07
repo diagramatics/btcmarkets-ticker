@@ -1,0 +1,12 @@
+{
+  "rules": [
+    {
+      "pathname": "/api/**",
+      "method": ["GET"],
+      "dest": "api.crypto.dgr.li"
+    },
+    {
+      "dest": "frontend.crypto.dgr.li"
+    }
+  ]
+}
