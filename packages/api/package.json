@@ -1,5 +1,5 @@
 {
-  "name": "btcmarkets-ticker-proxy",
+  "name": "btcmarkets-ticker-api",
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
