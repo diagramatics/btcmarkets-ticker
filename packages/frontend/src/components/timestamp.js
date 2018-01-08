@@ -1,56 +1,22 @@
-import { h, Component } from 'preact';
+import { h } from 'preact';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import TimeAgo from 'react-timeago';
 import colors from '../style/colors';
-import { relativeTime } from '../lib/timestamp';
 
 const Text = styled.div`
   color: ${colors.text.mid};
   margin: 1rem 0 0;
 `;
 
-export default class Timestamp extends Component {
-  static propTypes = {
-    timestamp: PropTypes.number
-  };
+const Timestamp = ({ timestamp }) => (
+  <Text>
+    <TimeAgo date={timestamp} />
+  </Text>
+);
 
-  static defaultProps = {
-    timestamp: ''
-  };
+Timestamp.propTypes = {
+  timestamp: PropTypes.instanceOf(Date).isRequired
+};
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      relativeTimeText: ''
-    };
-  }
-
-  componentWillMount() {
-    this.setTimerToUpdate();
-  }
-
-  componentWillUnmount() {
-    if (this.timer !== null) {
-      clearTimeout(this.timer);
-    }
-  }
-
-  setTimerToUpdate() {
-    this.timer = setTimeout(() => {
-      this.updateRelativity();
-      this.setTimerToUpdate();
-    }, 1000);
-  }
-
-  updateRelativity() {
-    this.setState({
-      relativeTimeText: relativeTime(this.props.timestamp)
-    });
-  }
-
-  timer = null;
-
-  render(props, { relativeTimeText }) {
-    return <Text>Updated {relativeTimeText}</Text>;
-  }
-}
+export default Timestamp;

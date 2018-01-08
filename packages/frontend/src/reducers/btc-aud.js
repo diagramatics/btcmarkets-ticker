@@ -4,7 +4,7 @@ export default function btcAudReducer(
   },
   action
 ) {
-  if (action.type === 'UPDATE_MARKET_DATA' && action.marketName === 'btcAud') {
+  if (action.type === 'UPDATE_MARKET_DATA' && action.marketName === 'btc-aud') {
     return {
       ...state,
       marketData: {
@@ -12,7 +12,7 @@ export default function btcAudReducer(
         bestBid: action.marketData.bestBid,
         bestAsk: action.marketData.bestAsk,
         volume: action.marketData.volume,
-        timestamp: action.marketData.timestamp
+        timestamp: action.marketData.timestamp * 1000
       }
     };
   }

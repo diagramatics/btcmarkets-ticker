@@ -1,17 +1,14 @@
 import { h, Component } from 'preact';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import colors from '../style/colors';
-import { getMarketData } from '../lib/api';
-import { formatPrice } from '../lib/price';
-import store from '../store';
 import Container from '../components/container';
 import CenterAlign from '../components/center-align';
 import BtcAudData from '../components/btc-aud-data';
 import EthAudData from '../components/eth-aud-data';
 import LtcAudData from '../components/ltc-aud-data';
-import btcAudActions from '../actions/btc-aud-data';
-import ethAudActions from '../actions/eth-aud-data';
-import ltcAudActions from '../actions/ltc-aud-data';
+import { fetchMarketData } from '../actions/market-data';
 
 const DataItem = styled.div`
   background: ${colors.background.white};
@@ -27,43 +24,11 @@ const Grid = styled.div`
   grid-auto-rows: 1fr;
 `;
 
-export default class Home extends Component {
-  componentWillMount() {
-    getMarketData('btc', 'aud').then(response => {
-      store.dispatch(
-        btcAudActions.updateMarketData({
-          lastPrice: formatPrice(response.data.lastPrice),
-          bestBid: formatPrice(response.data.bestBid),
-          bestAsk: formatPrice(response.data.bestAsk),
-          volume: response.data.volume24h,
-          timestamp: new Date(response.data.timestamp * 1000)
-        })
-      );
-    });
-
-    getMarketData('eth', 'aud').then(response => {
-      store.dispatch(
-        ethAudActions.updateMarketData({
-          lastPrice: formatPrice(response.data.lastPrice),
-          bestBid: formatPrice(response.data.bestBid),
-          bestAsk: formatPrice(response.data.bestAsk),
-          volume: response.data.volume24h,
-          timestamp: new Date(response.data.timestamp * 1000)
-        })
-      );
-    });
-
-    getMarketData('ltc', 'aud').then(response => {
-      store.dispatch(
-        ltcAudActions.updateMarketData({
-          lastPrice: formatPrice(response.data.lastPrice),
-          bestBid: formatPrice(response.data.bestBid),
-          bestAsk: formatPrice(response.data.bestAsk),
-          volume: response.data.volume24h,
-          timestamp: new Date(response.data.timestamp * 1000)
-        })
-      );
-    });
+class Home extends Component {
+  componentDidMount() {
+    this.props.fetchMarketData('btc', 'aud');
+    this.props.fetchMarketData('eth', 'aud');
+    this.props.fetchMarketData('ltc', 'aud');
   }
 
   render() {
@@ -86,3 +51,12 @@ export default class Home extends Component {
     );
   }
 }
+
+Home.propTypes = {
+  fetchMarketData: PropTypes.func.isRequired
+};
+
+export default connect(null, dispatch => ({
+  fetchMarketData: (instrument, currency) =>
+    dispatch(fetchMarketData(instrument, currency))
+}))(Home);
