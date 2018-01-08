@@ -8,6 +8,7 @@ import CenterAlign from '../components/center-align';
 import BtcAudData from '../components/btc-aud-data';
 import EthAudData from '../components/eth-aud-data';
 import LtcAudData from '../components/ltc-aud-data';
+import XrpAudData from '../components/xrp-aud-data';
 import { fetchMarketData } from '../actions/market-data';
 
 const DataItem = styled.div`
@@ -29,6 +30,7 @@ class Home extends Component {
     this.props.fetchMarketData('btc', 'aud');
     this.props.fetchMarketData('eth', 'aud');
     this.props.fetchMarketData('ltc', 'aud');
+    this.props.fetchMarketData('xrp', 'aud');
   }
 
   render() {
@@ -44,6 +46,9 @@ class Home extends Component {
             </DataItem>
             <DataItem>
               <LtcAudData />
+            </DataItem>
+            <DataItem>
+              <XrpAudData />
             </DataItem>
           </Grid>
         </Container>
